@@ -1,0 +1,104 @@
+Rajesh Sakhamuru
+CS 5001 Assignment #8 Written Component
+4-7-19
+
+1) Connect4 Functions:
+
+# Purpose
+    This function takes game-board represented as a list, the column number of where the user wants to play their piece
+    as integer x, and also takes which color piece the player is putting in the board as parameters. The function returns 
+    the game-board list, modified to have the piece that is indicated to be played in the location specified.
+# Signature
+    playPiece :: (List,xInt,color) => List
+# Examples
+    For the purposes of this exercise I am assuming a 4x4 board:
+    playPiece :: ([[None,None,None,None],[None,None,None,None],[None,None,None,None],[None,None,None,None]],0,"Red")
+	=> [["Red",None,None,None],[None,None,None,None],[None,None,None,None],[None,None,None,None]]
+    playPiece :: ([["Red",None,None,None],[None,None,None,None],[None,None,None,None],[None,None,None,None]],1,"Black")
+	=> [["Red",None,None,None],["Black",None,None,None],[None,None,None,None],[None,None,None,None]]
+    playPiece :: ([["Red",None,None,None],["Black",None,None,None],[None,None,None,None],[None,None,None,None]],0,"Red")
+	=> [["Red","Red",None,None],["Black",None,None,None],[None,None,None,None],[None,None,None,None]]
+-----
+# Purpose
+    This function determines if a piece can be played in a certain column in the gameboard list. If a column is full,
+    the function indicates via returning True or False that a piece cannot be played in that specific column. This function takes 
+    the game-board list, and "x" of the coordinate as an integer (COLUMN-only)  as parameters.
+# Signature
+    colFull :: (List,xInt) => Boolean
+# Examples
+    colFull :: ([["Red","Black","Black","Red"],["Black","Red",None,None],[None,None,None,None],[None,None,None,None]], 0)
+        => True
+    colFull :: ([["Red","Black","Black","Red"],["Black","Red",None,None],[None,None,None,None],[None,None,None,None]], 1)
+        => False
+-----
+# Purpose
+    This function determines whether the piece just played will win or end the game. It takes the game-board list and the 
+    location where the piece just played ends up (in X AND Y Coordinates) and tests to see if either the piece achieves
+    "Connect Four" to end the game, or if the board is full resulting in a Tie. If the game ends, that is output to the
+    screen, with GUI for the final implementation, but in this case as a string. 
+# Signature
+    endGame :: (List, xInt, yInt) => String
+# Examples
+    endGame :: ([["Red","Red","Red","Red"],["Black","Black","Black",None],[None,None,None,None],[None,None,None,None]], 0, 3)
+        => "Red is the Winner"
+    endGame :: ([["Red","Red","Red",None],["Black","Black","Black","Black"],[None,None,None,None],[None,None,None,None]], 1, 3)
+        => "Black is the Winner"
+    endGame :: ([["Red","Black","Red","Black"],["Black","Red","Black","Red"],["Red","Black","Red","Black"],["Black","Red","Black","Red"]], 3, 3)
+        => "Tie-Game"
+-----
+# Purpose
+    This function, when given the column-list (just one column of the game-board List) that a piece is being dropped into,
+    returns the y-coordinate where the piece will end up. This y-cooordinate will be useful endGame() function and also for
+    creating the GUI.
+# Signature
+    findY :: (List[xInt]) => Int
+# Examples
+    findY :: ([None,None,None,None]) => 0
+    findY :: (["Red",None,None,None]) => 1
+    findY :: (["Black","Red",None,None]) => 2
+    findY :: (["Black","Red","Red",None]) => 3
+---------------------------------------------------------
+---------------------------------------------------------
+2) List of Classes:
+
+Class: Board
+    Board.list
+Game board represented as a 2D list and has all of the above functions as methods manipulating that list.
+
+Class: Player    
+    Player.color
+    Player.tally
+"color" will give an identifier of either "Red" or "Black" which can be changed between (or before) games. There will be
+two (or more) "Player" objects (but only two playing at any given time).
+The "tally" could be used to keep track of multiple games and wins per each player.
+		  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

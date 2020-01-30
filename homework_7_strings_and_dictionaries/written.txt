@@ -1,0 +1,56 @@
+Rajesh Sakhamuru
+CS 5001
+HW7 (Strings and Dictionaries)
+3/20/19
+
+Written # 1
+"get" returns the item at a specific position in the list. In python this method is [], 
+where a specific index is specified in the [] and the data at that index in the list is returned.
+In list "lst", "lst[0]" returns the value in index 0 of the list. 
+
+"insert" puts a new data point in a specified location, usually between two other data points.
+In list "lst", "lst.insert(2,"hi")" inserts "hi" into the 2nd index of "lst". 
+
+"remove" removes a specific data point in it's first appearance in the list. 
+If lst = [0,1,2,0,3,4] and lst.remove(0) is called, lst will equal [1,2,0,3,4]
+
+"size" returns the number of data points in the list. len() is the size function for lists in python. 
+If lst = [1,2,3,4] then len(lst) will return 4.
+
+Written # 2
+
+names = ["Drew", "Yi", "Tian", "Lucas"]           #creates a list of strings called "names"
+new_names = [name.lower() for name in names]	  #creates a new list consisting of all the same 
+						   names as the list "names", but all the names are lowercase
+def filter_names(name):				  #defines a function called "filter_names" that takes parameter "name"
+	return len(name) <= 2			  #function "filter_names" returns a boolean value (True or False)
+						   if there are 2 or fewer letters in the string given it returns True, 
+						   otherwise it returns False
+filtered_names = list(filter(filter_names, new_names))  #creates a new list "filtered_names" which consists of all the names in 
+							 the list "new_names" which have 2 or fewer characters.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
