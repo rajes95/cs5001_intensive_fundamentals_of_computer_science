@@ -190,11 +190,6 @@ def draw_piece(x, y):
 
 
 def evaluate_for_winner(x, y):
-    """
-    # Purpose:
-    # Signature:
-    # Examples:
-    """
     global game_state
     global pos
     pos = (x, y)
